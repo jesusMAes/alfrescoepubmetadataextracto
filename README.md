@@ -1,3 +1,5 @@
+# alfresco action for extract epub dublin core metadata and cover image
+
 # Alfresco AIO Project - SDK 4.6
 
 This is an All-In-One (AIO) project for Alfresco SDK 4.6.
