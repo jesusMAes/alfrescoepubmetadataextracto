@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="acme:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+<model name="jme:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
 
     <!-- Optional meta-data about the model -->
-    <description>Sample Document Model</description>
-    <author>My Name</author>
+    <description>Extract epub metadata model</description>
+    <author>Jesus marmol</author>
     <version>1.0</version>
 
     <imports>
@@ -17,15 +17,14 @@
 
     <!-- Custom namespace for the ACME company -->
     <namespaces>
-        <namespace uri="http://www.acme.org/model/content/1.0" prefix="acme"/>
+        <namespace uri="http://www.jesusmarmol.org/model/content/1.0" prefix="jme"/>
     </namespaces>
 
-    <constraints>
+    <!--<constraints>
         <constraint name="acme:securityClassificationOptions" type="LIST">
             <parameter name="allowedValues">
                 <list>
                     <value></value>
-                    <!-- Empty for default search-->
                     <value>Public</value>
                     <value>Client Confidential</value>
                     <value>Company Confidential</value>
@@ -33,17 +32,17 @@
                 </list>
             </parameter>
         </constraint>
-    </constraints>
+    </constraints> -->
 
     <!-- ===============================================================================================================
         Constraints, Types, and Aspects go here...
         -->
 
-    <types>
-        <!--
+  <!--  <types>
+
             ACME Enterprise-wide Document root type.
             All other custom document types would extend this one.
-        -->
+
         <type name="acme:document">
             <title>Sample Document Type</title>
             <parent>cm:content</parent>
@@ -57,26 +56,85 @@
                 <aspect>acme:securityClassified</aspect>
             </mandatory-aspects>
         </type>
-    </types>
+    </types> -->
 
     <aspects>
         <!-- A document can have security classification applied and
              faceted search is specifically enabled for best performance and we change
              default index config to not tokenize the value. -->
-        <aspect name="acme:securityClassified">
-            <title>ACME Security Classified</title>
-            <description>Content has been security classified</description>
+        <aspect name="jme:extendedDublinCore">
+            <title>Dublin core metadata extended</title>
+            <description>Based on https://www.dublincore.org/specifications/dublin-core/dcmes-qualifiers/ list of qualifiers</description>
             <properties>
-                <property name="acme:securityClassification">
+                <property name="jme:DCtitle">
+                    <title>Title of the document</title>
                     <type>d:text</type>
                     <index enabled="true">
                         <atomic>true</atomic>
                         <stored>false</stored>
                         <tokenised>false</tokenised>
                     </index>
-                    <constraints>
-                        <constraint ref="acme:securityClassificationOptions"/>
-                    </constraints>
+                </property>
+                <property name="jme:DCcreator">
+                    <title>Creator(s) of the document</title>
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="jme:DCsubject">
+                    <title>Subject(s) of the document</title>
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="jme:DCdescription">
+                    <title>Description of the document</title>
+                    <type>d:text</type>
+                </property>
+                <property name="jme:DCpublisher">
+                    <title>Publisher of the document</title>
+                    <type>d:text</type>
+                </property>
+                <property name="jme:DCcontributor">
+                    <title>Contributor(s) of the document</title>
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="jme:DCdate">
+                    <title>Date of publication</title>
+                    <type>d:date</type>
+                </property>
+                <property name="jme:DCtype">
+                    <title>Tyoe of the document</title>
+                    <type>d:text</type>
+                </property>
+                <property name="jme:DCformat">
+                    <title>Format of the document</title>
+                    <type>d:text</type>
+                </property>
+                <property name="jme:DCidentifier">
+                    <title>Identifier of the document</title>
+                    <type>d:text</type>
+                </property>
+                <property name="jme:DCsource">
+                    <title>Source of the document</title>
+                    <type>d:text</type>
+                </property>
+                <property name="jme:DClanguage">
+                    <title>Language(s) of the document</title>
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="jme:DCrelation">
+                    <title>Relation(s) of the document</title>
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="jme:DCcoverage">
+                    <title>Coverage of the document</title>
+                    <type>d:text</type>
+                </property>
+                <property name="jme:DCrights">
+                    <title>Rights of the document</title>
+                    <type>d:text</type>
                 </property>
             </properties>
         </aspect>

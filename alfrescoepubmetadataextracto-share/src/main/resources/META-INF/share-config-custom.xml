@@ -19,7 +19,7 @@
     <config evaluator="string-compare" condition="DocumentLibrary">
         <aspects>
             <visible>
-                <aspect name="acme:securityClassified"/>
+                <aspect name="jme:extendedDublinCore"/>
             </visible>
             <addable> <!-- defaults to visible config -->
             </addable>
@@ -412,6 +412,30 @@
                     <field id="acme:securityClassification" label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                 </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="aspect" condition="jme:extendedDublinCore">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="jme:DCtitle" />
+                    <show id="jme:DCcreator" />
+                    <show id="jme:DCsubject" />
+                    <show id="jme:DCdescription" />
+                    <show id="jme:DCpublisher" />
+                    <show id="jme:DCcontributor" />
+                    <show id="jme:DCdate" />
+                    <show id="jme:DCtype" />
+                    <show id="jme:DCformat" />
+                    <show id="jme:DCidentifier" />
+                    <show id="jme:DCsource" />
+                    <show id="jme:DClanguage" />
+                    <show id="jme:DCrelation" />
+                    <show id="jme:DCcoverage" />
+                    <show id="jme:DCrights" />
+                </field-visibility>
             </form>
         </forms>
     </config>

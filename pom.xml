@@ -6,65 +6,17 @@
   
   
   <modelVersion>4.0.0</modelVersion>
-              
-  
-  
-  
-  
+
   <groupId>com.jesusmarmol</groupId>
-              
-  
-  
-  
-  
   <artifactId>alfrescoepubmetadataextracto</artifactId>
-              
-  
-  
-  
-  
   <version>1.0-SNAPSHOT</version>
-              
-  
-  
-  
-  
   <name>AIO - SDK 4.6</name>
-              
-  
-  
-  
-  
   <description>All-In-One (AIO) project for SDK 4.6</description>
-              
-  
-  
-  
-  
   <packaging>pom</packaging>
-              
-  
-  
-  
-  
   <prerequisites>
-                            
-    
-    
-    
-    
     <maven>3.3.0</maven>
-                        
-  
-  
-  
-  
   </prerequisites>
-              
-  
-  
-  
-  
+
   <properties>
                             
     
@@ -415,11 +367,22 @@
     
     
     </dependency>
-                        
-  
-  
-  
-  
+
+    <!-- https://mvnrepository.com/artifact/io.documentnode/epub4j-core -->
+    <dependency>
+      <groupId>io.documentnode</groupId>
+      <artifactId>epub4j-core</artifactId>
+      <version>4.2.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/jempbox -->
+    <dependency>
+      <groupId>org.apache.pdfbox</groupId>
+      <artifactId>jempbox</artifactId>
+      <version>1.8.17</version>
+    </dependency>
+
+
+
   </dependencies>
               
   

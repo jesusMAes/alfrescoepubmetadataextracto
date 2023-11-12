@@ -37,5 +37,13 @@
         <property name="nodeLocatorService" ref="nodeLocatorService" />
     </bean>
 
+    <bean id="extract-epub-metadata"
+          class="com.jesusmarmol.actions.ExtractEpubMetadata"
+          parent="action-executer">
+        <property name="serviceRegistry">
+            <ref bean="ServiceRegistry" />
+        </property>
+    </bean>
+
 
 </beans>
