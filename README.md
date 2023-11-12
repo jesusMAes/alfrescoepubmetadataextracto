@@ -1,11 +1,41 @@
-# Alfresco Epub extractor
+# Alfresco Epub metadata extractor
 Simple action that add Epub files to mimetypes and extract its dublin core metadata
 
 ## Usage
-Fork the project and build it using `./run.bat build_start` or `./run.sh build_start` or copy the Jars from 
+Fork the project and build it using `./run.bat build_start` or `./run.sh build_start` or copy the Jars from [content](alfrescoepubmetadataextracto-platform/target/) and from [share](alfrescoepubmetadataextracto-share/target/) 
+Copy the jars in your dockerized alfresco in `alfresco/modules/jars` and `share/modules/jars`
+
+Create your library folder and add a rule to it: when a epub file enters, execute extract epub metadata action. Mark the autoclasify check if you want it to create and author/book folder estructure.
+![imagen](https://github.com/jesusMAes/alfrescoepubmetadataextracto/assets/95760152/a71d0d46-92a8-4ccb-8093-71cde417ff39)
+
+Autoclasify also extract the cover image of the book
+![imagen](https://github.com/jesusMAes/alfrescoepubmetadataextracto/assets/95760152/1c3e7657-08b1-4d71-9b3b-49c506161cd5)
+
+## Metadata
+Alfresco base dublin core aspect lack of some useful dublin core metadata so I write my own extension. Extracted metadata would be located in `jme:extendedDublinCore` aspect.
+Based on [dublin core standard](https://www.dublincore.org/specifications/dublin-core/dcmes-qualifiers/ ) 
+Fields are:
+| Metadata | Description | Dublin core equivalent |
+| ----------- | ----------- | ----------- |
+| jme:DCtitle | Title of the document | Title |
+| jme:DCcreator | Creator(s) of the document - Multivalue | Creator|
+| jme:DCsubject | Subject(s) of the document - Multivalue | Subject|
+| jme:DCdescription | Description of the document | Description|
+| jme:DCpublisher | Publisher of the document | Publisher|
+| jme:DCcontributor | Contributor(s) of the document - Multivalue | Contributor|
+| jme:DCdate | Date of the document | Date |
+| jme:DCtype | Type of the document | Type |
+| jme:DCformat | Format of the document | Format |
+| jme:DCidentifier | ID of the document | Identifier |
+| jme:DCsource | Source of the document | Source |
+| jme:DClanguage | Language(s) of the document - Multivalue | language |
+| jme:DCrelation | Relation(s) of the document - Multivalue | Relation |
+| jme:DCcoverage | Coverage of the document | Coverage |
+| jme:DCrights | Rights of the document | Rights |
 
 
-# alfresco action for extract epub dublin core metadata and cover image
+
+
 
 # Alfresco AIO Project - SDK 4.6
 
