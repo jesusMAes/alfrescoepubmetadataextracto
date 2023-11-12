@@ -1,0 +1,6 @@
+com\jesusmarmol\actions\JMEmodelConstant.class
+com\jesusmarmol\actions\ExtractEpubMetadata.class
+com\jesusmarmol\actions\Utils.class
+com\jesusmarmol\platformsample\Demo.class
+com\jesusmarmol\platformsample\HelloWorldWebScript.class
+com\jesusmarmol\platformsample\DemoComponent.class

@@ -1,0 +1,9 @@
+<alfresco-config area="mimetype-map">
+    <config evaluator="string-compare" condition="Mimetype Map">
+        <mimetypes>
+            <mimetype mimetype="application/epub+zip" display="epub">
+                <extension>epub</extension>
+            </mimetype>
+        </mimetypes>
+    </config>
+</alfresco-config>
