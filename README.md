@@ -1,3 +1,10 @@
+# Alfresco Epub extractor
+Simple action that add Epub files to mimetypes and extract its dublin core metadata
+
+## Usage
+Fork the project and build it using `./run.bat build_start` or `./run.sh build_start` or copy the Jars from 
+
+
 # alfresco action for extract epub dublin core metadata and cover image
 
 # Alfresco AIO Project - SDK 4.6
