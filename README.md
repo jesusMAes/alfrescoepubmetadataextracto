@@ -34,8 +34,13 @@ Fields are:
 | jme:DCrights | Rights of the document | Rights |
 
 
-
-
+## Customizing
+If you want to change the aspect and metadata in which extracted metadata are stored follow this steps:
+- Go to [content-model.xml](alfrescoepubmetadataextracto-platform/src/main/resources/alfresco/module/alfrescoepubmetadataextracto-platform/model/content-model.xml) and change the aspect to your custom aspect.
+- Go to [JMEmodelConstant.java](alfrescoepubmetadataextracto-platform/src/main/java/com/jesusmarmol/actions/JMEmodelConstant.java) and map your custom properties.
+- Go to [Utils](alfrescoepubmetadataextracto-platform/src/main/java/com/jesusmarmol/actions/Utils.java) and in `parseDCMetadataToModelMetadata` method change the dc prefix for the prefix of the epub metadata you are looking for (most epubs only have dc metadata). In `dublinCoreTagToQNameEquivalence` static initializer map each epub metadata to your qname from constants
+- Your can change the logic and extend the funcionality editing [ExtractEpubMetadata.java](alfrescoepubmetadataextracto-platform/src/main/java/com/jesusmarmol/actions/ExtractEpubMetadata.java)
+- Don't forget to edit [share-config-custom.xml](    alfrescoepubmetadataextracto-share/src/main/resources/META-INF/share-config-custom.xml) and add your new model to visibility zone  
 
 # Alfresco AIO Project - SDK 4.6
 
